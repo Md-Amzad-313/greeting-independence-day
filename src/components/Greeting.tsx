@@ -20,7 +20,6 @@ const Greeting = () => {
       setError('Name must be at least 2 characters and cannot exceed 36 characters.');
       return false;
     }
-
     return true;
   };
 
@@ -46,40 +45,35 @@ const Greeting = () => {
   };
 
   return (
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-orange-500 via-white to-green-600">
-      <div class="flex flex-col items-center justify-center max-w-md w-full p-6">
-        <div class="bg-gradient-to-r from-white via-gray-100 to-gray-200 p-6 rounded-lg shadow-lg w-full text-center">
-          <IndianFlag />
-          <br />
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Independence Day Greeting</h2>
-          <p class="text-lg text-gray-700 mb-6">Enter your name to receive a personalized greeting</p>
-          <form onSubmit={handleSubmit} class="bg-gradient-to-r from-orange-500 to-green-800 text-white p-8 rounded-lg shadow-md w-full">
-            <div class="mb-6">
-              <input
-                type="text"
-                id="name"
-                value={name}
-                onInput={handleInputChange}
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-yellow-100 text-rose-900"
-                placeholder="Enter your name here"
-                autocomplete='off'
-              />
-              {error && <p class="text-red-900 text-base italic mt-2">{error}</p>}
-            </div>
-            <button
-              type="submit"
-              class="w-full py-3 bg-gradient-to-r from-rose-400 to-purple-500 text-white font-semibold rounded-lg shadow-md transition-colors"
-            >
-              Submit
-            </button>
-          </form>
-          <div class="mt-10">
-          <hr class="border-t-2 border-gray-800 my-8" />
-          <p class="text-sm text-gray-700 mb-6">💜 Built Using 🥳 Preact 🔥 and Tailwind CSS 🎨<br />🥤 <a href="https://github.com/mskian/independence-day-app" target="_blank" rel="nofollow noopener" class="text-rose-900 hover:underline">
-           Dev by Santhosh MSK</a>
-          </p>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-orange-500 via-white to-green-600 px-4">
+      <div class="bg-gradient-to-r from-white via-gray-100 to-gray-200 p-6 rounded-lg shadow-lg w-full max-w-md text-center">
+        <IndianFlag />
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Independence Day Greeting</h2>
+        <p class="text-base md:text-lg text-gray-700 mb-6">Enter your name to receive a personalized greeting</p>
+
+        <form onSubmit={handleSubmit} class="bg-gradient-to-r from-orange-500 to-green-800 text-white p-6 md:p-8 rounded-lg shadow-md w-full">
+          <div class="mb-4 md:mb-6">
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onInput={handleInputChange}
+              class="w-full px-4 py-3 md:py-4 border border-gray-300 rounded-lg bg-yellow-100 text-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-rose-400"
+              placeholder="Enter your name here"
+              autoComplete="off"
+            />
+            {error && <p class="text-red-900 text-sm md:text-base italic mt-2">{error}</p>}
           </div>
-        </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 md:py-4 bg-gradient-to-r from-rose-400 to-purple-500 text-white font-semibold rounded-lg shadow-md hover:from-rose-500 hover:to-purple-600 transition-colors"
+          >
+            Submit
+          </button>
+        </form>
+
+        <p class="text-sm md:text-base text-gray-700 mt-6">💜 Developed by Amzad Sheikh</p>
       </div>
     </div>
   );
